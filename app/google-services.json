@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913220792973",
+    "project_id": "clinicacorachan-2af40",
+    "storage_bucket": "clinicacorachan-2af40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913220792973:android:efd9a7f824b6303c7668c4",
+        "android_client_info": {
+          "package_name": "com.example.clinicacorachan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913220792973-lvtmg96nt1presa8erbafjhaj8r9jv50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCtF54irtj6JJ10ptAOpzowXvEi5O_go4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913220792973-lvtmg96nt1presa8erbafjhaj8r9jv50.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
