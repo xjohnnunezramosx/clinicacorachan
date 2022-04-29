@@ -1,22 +1,33 @@
 package com.example.clinicacorachan;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.clinicacorachan.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class FormularioActivity extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_formulario);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
     }
+
     public void registrarse(View v){
         EditText nombre = this.findViewById(R.id.editTextTextPersonName);
         EditText dnipasaporte = this.findViewById(R.id.editTextNumber);
@@ -29,27 +40,30 @@ public class FormularioActivity extends AppCompatActivity {
         EditText contraseña = this.findViewById(R.id.editTextTextPassword);
 
 
-        String a = nombre.getText().toString();
-        String b = dnipasaporte.getText().toString();
-        String c = correo.getText().toString();
-        String d = telefono.getText().toString();
-        String e = distrito.getText().toString();
-        String f = direccion.getText().toString();
-        String g = nombre_paciente.getText().toString();
-        String h = fecha_nacimiento.getText().toString();
-        String i = contraseña.getText().toString();
+        String name = nombre.getText().toString();
+        String dni = dnipasaporte.getText().toString();
+        String email = correo.getText().toString();
+        String phone = telefono.getText().toString();
+        String district = distrito.getText().toString();
+        String direction = direccion.getText().toString();
+        String namePacient = nombre_paciente.getText().toString();
+        String date = fecha_nacimiento.getText().toString();
+        String password = contraseña.getText().toString();
 
-        Log.i("====>",a);
-        Log.i("====>" ,b);
-        Log.i("====>",c);
-        Log.i("====>",d);
-        Log.i("====>",e);
-        Log.i("====>",f);
-        Log.i("====>",g);
-        Log.i("====>",h);
-        Log.i("====> ",i);
+        FirebaseAuth.getInstance()
+                .createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if(task.isSuccessful()){
+                            User user = new User(name,dni,email,phone,district,direction,namePacient,date);
+                            mDatabase.child("users").child(dni).setValue(user);
 
-        startActivity(new Intent(this,LogueoActivity.class));
+                            startActivity(new Intent(getApplicationContext(),LogueoActivity.class));
+                        }
+                    }
+                });
+
     }
 
 }
