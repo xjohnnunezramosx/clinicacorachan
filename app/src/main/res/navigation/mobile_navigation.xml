@@ -15,13 +15,42 @@
         android:id="@+id/nav_citas"
         android:name="com.example.clinicacorachan.ui.citas.CitasFragment"
         android:label="@string/menu_citas"
-        tools:layout="@layout/fragment_citas" />
+        tools:layout="@layout/fragment_citas" >
+        <action
+            android:id="@+id/action_nav_citas_to_nav_doctores"
+            app:destination="@id/nav_doctores" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_doctores"
+        android:name="com.example.clinicacorachan.ui.citas.DoctoresFragment"
+        android:label="@string/menu_citas"
+        tools:layout="@layout/fragment_doctores" >
+        <action
+            android:id="@+id/action_nav_doctores_to_nav_citas"
+            app:destination="@id/nav_citas" />
+        <action
+            android:id="@+id/action_nav_doctores_to_nav_confirmacion"
+            app:destination="@id/nav_confirmacion" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_confirmacion"
+        android:name="com.example.clinicacorachan.ui.citas.ConfirmacionFragment"
+        android:label="@string/menu_historial"
+        tools:layout="@layout/fragment_confirmacion" >
+        <action
+            android:id="@+id/action_nav_confirmacion_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/nav_historial"
         android:name="com.example.clinicacorachan.ui.historial.HistorialFragment"
         android:label="@string/menu_historial"
         tools:layout="@layout/fragment_historial" />
+
     <fragment
         android:id="@+id/nav_campaña_salud"
         android:name="com.example.clinicacorachan.ui.recordatorio.RecordatorioFragment"

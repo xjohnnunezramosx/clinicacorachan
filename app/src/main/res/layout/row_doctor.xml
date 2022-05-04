@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/row_thermal_printer_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clickable="true">
+
+
+    <RatingBar
+        android:id="@+id/rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgDoctor"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/girl" />
+
+    <TextView
+        android:id="@+id/tvNameDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="John Nuñez Ramos"
+        app:layout_constraintStart_toEndOf="@+id/imgDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/rating" />
+
+    <TextView
+        android:id="@+id/tvCMP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CMP : 475619"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/tvNameDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameDoctor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

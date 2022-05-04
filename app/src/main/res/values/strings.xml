@@ -14,5 +14,5 @@
     <string name="menu_recordatorio">Campañas de Salud</string>
     <string name="menu_digital">Digitalización</string>
     <string name="menu_ubicacion">Localización</string>
-
+    <string name="saved_dni">saved_dni</string>
 </resources>

@@ -19,8 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Ingrese su Correo"
-        android:inputType="text" />
+        android:hint="Ingrese su DNI"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
