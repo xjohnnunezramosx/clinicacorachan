@@ -25,9 +25,9 @@ public class FormularioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_formulario);
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
-
     public void registrarse(View v){
         EditText nombre = this.findViewById(R.id.editTextTextPersonName);
         EditText dnipasaporte = this.findViewById(R.id.editTextNumber);
@@ -63,7 +63,6 @@ public class FormularioActivity extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 
 }

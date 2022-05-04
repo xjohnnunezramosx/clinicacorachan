@@ -25,4 +25,14 @@ public class User {
         this.date = date;
     }
 
+    public User(){
+        this.username = "";
+        this.dni = "";
+        this.email = "";
+        this.phone = "";
+        this.district = "";
+        this.direction = "";
+        this.namePacient = "";
+        this.date = "";
+    };
 }
